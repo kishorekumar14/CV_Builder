@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        /* CSS Document */
+        body,td,th {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: #000000;
+           }
+           body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+           }
+           .pad
+           {
+           padding-left:10px;
+           }
+           a:link {
+            color: #000000;
+            text-decoration: none;
+           }
+           a:visited {
+            text-decoration: none;
+            color: #000000;
+           }
+           a:hover {
+            text-decoration: underline;
+            color: #000000;
+           }
+           a:active {
+            text-decoration: none;
+            color: #000000;
+           }
+           
+        </style>
+</head>
+<body>
+  {% if messages %}
+    <div class="alert alert-dismissible alert-success">
+      <strong>{{messages}}<strong>
+    </div>
+{% endif %}
+
+      <table width="850" border="0" align="center">
+        <tr>
+          <td><table width="850" border="0" class="bor">
+            <tr>
+              <td height="60" colspan="2"><div align="center"><strong>{{create_resume.fname}} {{create_resume.lname}}</strong>
+        </div></td>
+            </tr>
+            <tr>
+              <td width="48%">Email ID: {{create_resume.email}}</td>
+              <td width="52%"><div align="right">Contact: {{create_resume.phone}}</div></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#CCCCCC"><strong>ABOUT ME</strong></td>
+            </tr>
+            
+            <tr>
+              <td colspan="2" style="text-indent:30px;">{{create_resume.aboutyou}}</td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#CCCCCC" ><strong>EDUCATIONAL PROFILE</strong></td>
+            </tr>
+            <tr>
+              <td colspan="2"><table width="850" border="1" bordercolor="#000000">
+                <tr>
+                  <td><div align="center"><strong>Course</strong></div></td>
+                  <td><div align="center"><strong>Board/University</strong></div></td>
+                  <td><div align="center"><strong>Educational Institutation</strong></div></td>
+                  <td><div align="center"><strong>Year of pass</strong></div></td>
+                  <td><p align="center"><strong>% of Marks</strong></p></td>
+                </tr>
+                <!-- <tr>
+                  <td>MCA</td>
+                  <td>Andhra University</td>
+                  <td><div align="left">Dr.B.V.Raju Institute of Computer Education,Bhimavaram
+                   </div></td>
+                  <td><div align="center">2013</div></td>
+                  <td>8.12 (CGPA)</td>
+                </tr> -->
+                <tr>
+                  <td>{{degree_info.degree}}</td>
+                  <td>{{degree_info.university}}</td>
+                  <td><div align="left">{{degree_info.degreecity}}</div></td>
+                  <td><div align="center">{{degree_info.degreestartyear}} - {{degree_info.degreeendyear}}</div></td>
+                  <td>{{degree_info.degreepercent}}</td>
+                </tr>
+                <tr>
+                  <td>{{school_info.schoolboard}}</td>
+                  <td>{{school_info.school}}</td>
+                  <td><div align="left">{{school_info.schoolcity}}</div></td>
+                  <td><div align="center">{{school_info.schoolstartyear}} - {{school_info.schoolendyear}}</div></td>
+                  <td>{{school_info.schoolpercent}}</td>
+                </tr>
+                <tr>
+                  <td>{{intermediate_info.intermediate}}</td>
+                  <td>{{intermediate_info.college}}</td>
+                  <td><div align="left">{{intermediate_info.intercity}}</div></td>
+                  <td><div align="center">{{intermediate_info.interstartyear}} - {{intermediate_info.interendyear}}</div></td>
+                  <td>{{intermediate_info.interpercent}}</td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#CCCCCC"><strong>TECHNICAL SKILLS</strong></td>
+            </tr>
+            <tr>
+              <td colspan="2"><table width="831" border="0" align="center">
+                <tr>
+                  <ul>
+                  <td width="264"><li>Operating System</li></td>
+                  <td width="37"><strong>:</strong></td>
+                  <td width="532">{{skills.operatingSkill}}</td>
+                  </ul>
+                </tr>
+                <tr>
+                <ul>
+                  <td><li>Programming Languages</li></td>
+                  <td><strong>:</strong></td>
+                  <td>{{skills.programSkill}}</td>
+                  </ul>
+                </tr>
+                <tr>
+                <ul>
+                  <td><li>Frameworks</li></td>
+                  <td><strong>:</strong></td>
+                  <td>{{skills.FrameworkSkill}}</td>
+                 </ul>
+                </tr>
+                <tr>
+                <ul>
+                  <td><li>Database</li></td>
+                  <td><strong>:</strong></td>
+                  <td>{{skills.DatabaseSkill}}</td>
+                  </ul>
+                </tr>
+                <tr>
+                <ul>
+                  <td><li>IDE</li></td>
+                  <td><strong>:</strong></td>
+                  <td>{{skills.IDESkill}}</td>
+                  </ul>
+                </tr>
+                <tr>
+                  <ul>
+                    <td><li>Other Skills</li></td>
+                    <td><strong>:</strong></td>
+                    <td>{{skills.otherSkill}}</td>
+                    </ul>
+                  </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#CCCCCC"><strong>PROJECT EXPERIENCE</strong></td>
+            </tr>
+            <tr>
+              <td height="17" colspan="2" bgcolor="#FFFFFF"><table width="829" border="0" 
+               align="center">
+                <tr>
+                  <ul>
+                    <td width="831"><li>Done main-project on<strong> &quot;{{job_details.projecttitle}}
+                    &quot;</strong> {{job_details.project}}</li></td>
+                 </ul>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><li>Done Internship in {{job_details.internship}}</li></td>
+                </tr>
+                <tr>
+                  <td><table width="585">
+                    <tr>
+                      <td width="120"><strong>Project Title</strong></td>
+                      <td width="15"><strong>:</strong></td>
+                      <td width="434"><strong>{{job_details.projecttitle}}</strong>
+                       </td>
+                    </tr>
+                    <tr>
+                      <td>Team Size</td>
+                      <td>:</td>
+                      <td>{{job_details.projectteam}}</td>
+                    </tr>
+                    <tr>
+                      <td>Position</td>
+                      <td>:</td>
+                      <td> {{job_details.position}}</td>
+                    </tr>
+                  </table></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td height="17" colspan="2" bgcolor="#FFFFFF"></td>
+            </tr>
+          
+          </table></td>
+        </tr>
+      </table>
+      
+      
+      
+      <table width="850" border="0" align="center">
+        <tr>
+          <td><table width="850" border="0">
+            <tr>
+              <td colspan="2" bgcolor="#CCCCCC"><strong>ACHIVEMENTS</strong></td>
+            </tr>
+            <tr>
+             <td height="17" colspan="2" bgcolor="#FFFFFF"><table width="829" border="0"
+              align="center">
+               <tr>
+                 <ul>
+                   <td width="513"><li> {{extra_activities.achivements1}} </li></td>
+                 </ul>
+               </tr>
+               <tr>
+                 <ul>
+                   <td><li>{{extra_activities.achivements2}}</li></td>
+                 </ul>
+               </tr>
+             </table></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#CCCCCC"><strong>CO-CURRICULAR ACTIVITIES</strong></td>
+              </tr>
+            <tr>
+              <td colspan="2"><table width="829" border="0" align="center">
+                <tr>
+                  <ul>
+                    <td width="513"><li>Presented a Paper on &quot;Android&quot; at INSPIRE'12 
+                     in DNR College of Engineering.</li></td>
+                  </ul>
+                </tr>
+                <tr>
+                  <ul>
+                    <td><li>Presented a Paper on &quot;CloudComputing&quot; at GECFEST'11-'12 
+                     in Gudlavalleru Engineering College.</li></td>
+                  </ul>
+                </tr> 
+              </table></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#CCCCCC"><strong>EXTRA CURRICULAR ACTIVITIES</strong></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#FFFFFF"><table width="829" border="0" align="center">
+                <tr>
+                  <ul>
+                    <td width="513"><li>Successfully completed NCC training and attained 'A' 
+                     certificate.</li></td>
+                  </ul>
+                </tr>
+                <tr>
+                  <ul>
+                    <td><li>Successfully completed Group Annual Training Camp of NCC held at 
+                     Nuzvid.</li></td>
+                  </ul>
+                </tr>
+                <tr>
+                  <ul>
+                    <td><li>Participated in Reel Race 2k12, a short film contest conducted at
+                     Shri Vishnu Educational Society on February, 2012.</li></td>
+                  </ul>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#CCCCCC"><strong>STRENGHTS</strong></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#FFFFFF"><table width="829" border="0" align="center">
+                <tr>
+                <ul>
+                  <td width="513"><li>{{extra_activities.strengths1}}</li></td>
+                  </ul>
+                </tr>
+                <tr>
+                <ul>
+                  <td><li>{{extra_activities.strengths2}}</li></td>
+                  </ul>
+                </tr>
+               
+              </table></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#CCCCCC"><strong>HOBBIES</strong></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#FFFFFF"><table width="829" border="0" align="center">
+                <tr>
+                <ul>
+                  <td width="513"><li>{{extra_activities.hobbies1}}</li></td>
+                  </ul>
+                </tr>
+                <tr>
+                <ul>
+                  <td><li>{{extra_activities.hobbies2}}</li></td>
+                  </ul>
+                </tr>
+               
+                
+              </table></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#CCCCCC"><strong>PERSONAL DETAILS</strong></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#FFFFFF"><table width="829" border="0" align="center">
+                <tr>
+                  <ul>
+                    <td width="331"><li>Father Name</li></td>
+                    <td width="29"><strong>:</strong></td>
+                    <td width="455">Shaik Shanur</td>
+                  </ul>
+                </tr>
+                <tr>
+                  <ul>
+                    <td><li>Languages</li></td>
+                    <td><strong>:</strong></td>
+                    <td>Hindi,English,Telugu,Urdu</td>
+                  </ul>
+                </tr>
+                <tr>
+                  <ul>
+                    <td><li>Date of Birth</li></td>
+                    <td><strong>:</strong></td>
+                    <td>02th Jan,1990</td>
+                  </ul>
+                </tr>
+                <tr>
+                  <ul>
+                    <td><li>Marital Status</li></td>
+                    <td><strong>:</strong></td>
+                    <td>Single</td>
+                  </ul>
+                </tr>
+                <tr>
+                  <ul>
+                    <td><li>Permanent Address</li></td>
+                    <td><strong>:</strong></td>
+                    <td>Palurivari Street, Bhimavaram-534201</td>
+                  </ul>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td width="58%" bgcolor="#FFFFFF">Place:Bhimavaram</td>
+              <td width="42%" bgcolor="#FFFFFF"><div align="right">(SK UMAR FARUK)</div></td>
+            </tr>
+            <tr>
+              <td colspan="2" bgcolor="#FFFFFF">Date:19/08/2014</td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>
+
+      
+      <button><a href="/pdfresume/">Download PDF</a></button>
+      <button><a href="/updateform/">Change</a></button>
+</body>
+</html>

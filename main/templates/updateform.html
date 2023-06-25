@@ -1,0 +1,774 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>BIO</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/form.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/owl-carousel.css' %}">
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#" class="logo"><img width="47px" src="{% static 'assets/images/resume (1).png' %}" alt=""> BIO</a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href=" " class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Drop Down</a>
+                                <ul>
+                                    <li><a href="'#services'">Features</a></li>
+                                    <li><a href="#frequently-question">FAQ's</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li>
+                            <li class="scroll-to-section"><a href="/form/">CREATE RESUME</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+<!-- form -->
+
+    
+<!-- <div class="welcome-area" id="welcome">
+
+    <div class="header-text">
+       
+    </div> 
+    </div> -->
+<form action="/personaldetails/" method="post">
+{% csrf_token %}
+<section class="con" style=" color: dodgerblue;">
+    <div class="card shadow-md mt-4" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+        <div class="card-body" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+            <legend class="complex-box-legend">
+                <i class="fa fa-user-tie"></i>
+                 Personal Details
+             </legend>
+            </div>
+            <div class="card-body border-top"data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                <div class="row"><div class="col-sm-12 col-lg-6">
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" autocomplete="off" value="{{create_resume.fname}}">
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" autocomplete="off" value="{{create_resume.lname}}">
+                            </div></div></div></div>
+                <div class="row"><div class="col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    <div class="form-label-group">
+                                        <input type="text" name="email" id="email" class="form-control" placeholder="Email" autocomplete="off" value="{{create_resume.email}}">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <div class="form-group">
+                                    <div class="form-label-group">
+                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone Number" autocomplete="off" value="{{create_resume.phone}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="form-label-group">
+                                            <input type="text" name="address" id="address" class="form-control" placeholder="Address" autocomplete="off" value="{{create_resume.address}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <div class="form-label-group">
+                                                <input type="text" name="city" id="city" class="form-control" placeholder="City" autocomplete="off" value="{{create_resume.city}}">
+                                               </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <div class="form-label-group">
+                                                    <input type="text" name="pincode" id="pincode" class="form-control" placeholder="pincode" autocomplete="off" value="{{create_resume.pincode}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <div class="form-label-group">
+                                                        <input type="text" name="state" id="state" class="form-control" placeholder="State" autocomplete="off" value="{{create_resume.state}}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+<div class="col">
+<div class="form-group">
+<div class="form-label-group">
+<select name="country" id="country" class="custom-select"><option value=""> COUNTRY </option><option value="AF">Afghanistan</option><option value="AX">Aland Islands</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua And Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia And Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="BN">Brunei Darussalam</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="KY">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo</option><option value="CD">Congo, Democratic Republic</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="CI">Cote D'Ivoire</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands (Malvinas)</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GG">Guernsey</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard Island &amp; Mcdonald Islands</option><option value="VA">Holy See (Vatican City State)</option><option value="HN">Honduras</option><option value="HK">Hong Kong</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran, Islamic Republic Of</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IM">Isle Of Man</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KR">Korea</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Lao People's Democratic Republic</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libyan Arab Jamahiriya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macao</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia, Federated States Of</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="MP">Northern Mariana Islands</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PS">Palestinian Territory, Occupied</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RE">Reunion</option><option value="RO">Romania</option><option value="RU">Russian Federation</option><option value="RW">Rwanda</option><option value="BL">Saint Barthelemy</option><option value="SH">Saint Helena</option><option value="KN">Saint Kitts And Nevis</option><option value="LC">Saint Lucia</option><option value="MF">Saint Martin</option><option value="PM">Saint Pierre And Miquelon</option><option value="VC">Saint Vincent And Grenadines</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="ST">Sao Tome And Principe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia And Sandwich Isl.</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard And Jan Mayen</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syrian Arab Republic</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="TL">Timor-Leste</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad And Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks And Caicos Islands</option><option value="TV">Tuvalu</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US">United States</option><option value="UM">United States Outlying Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VE">Venezuela</option><option value="VN">Viet Nam</option><option value="VG">Virgin Islands, British</option><option value="VI">Virgin Islands, U.S.</option><option value="WF">Wallis And Futuna</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option></select>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<select name="gender" id="gender" class="custom-select">
+<option value=""> Gender... </option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div class="col">
+<label style=" text-transform: uppercase; padding-right: 1%;">
+    date of birth :
+</label>
+<input   name="dob" id="dob" placeholder="date of birth" style="font-size: 1.2rem;width:70%;" type="date"/>
+</div>
+</div>
+<div class="row" style=" padding-left:15px !important;padding-top:15px; text-transform: uppercase;">
+ABOUT you....
+</div>
+<div class="row">
+<textarea type="text" style="margin:15px;" name="aboutyou"  class="form-control" placeholder="Write your career objective and aspirations. Explain what you are looking for in your career. " autocomplete="off"rows="4" cols="50" >{{create_resume.aboutyou}}
+</textarea>
+</div>                                          
+</div>
+</div>
+
+<!-- EDUCATION  -->
+    <div class="card shadow-md mt-4" style=" margin-top:3%; color: dodgerblue;">
+    <div class="card-body">
+    <legend class="complex-box-legend">
+    <i class="fa fa-user-circle"></i> 
+    EDUCATION :
+    </legend>
+    </div>
+    <div class="card-body border-top pb-0" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+    <div class="pb-3">
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+    <label  style="font-family: Georgia, serif;font-size: 25px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  " >Degree</label>
+    <input type="text" name="degree" id="degree" class="form-control" placeholder="Degree" autocomplete="off" value="{{degree_info.degree}}">
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+    <label style="font-family: Georgia, serif;font-size: 25px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  ">City/Town</label>
+    <input type="text"  name="degreecity" id="degreecity" class="form-control" placeholder="City/Town" autocomplete="off" value="{{degree_info.degreecity}}">
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col col-md-8">
+    <div class="form-group">
+    <div class="form-label-group">
+    <label>University</label>
+    <input type="text" name="university" id="university" class="form-control" placeholder="university  Name:" autocomplete="off" value="{{degree_info.university}}">
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="form-group">                                                                                         
+    <div class="form-label-group">
+    <label>percentage </label>
+    <input type="text"  name="degreepercent" id="degreepercent" class="form-control" placeholder="ex:90%" autocomplete="off" value="{{degree_info.degreepercent}}">
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6 col-sm-12">
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>Start Month</label>
+    <select name="degreestartmonth" id="degreestartmonth" class="custom-select"><option value=""> Choose... </option><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select>
+    
+    </div>
+    </div>
+    </div>
+    <br>
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>Start Year</label>
+    <select name="degreestartyear" id="degreestartyear" class="custom-select">
+    <option value=""> Choose... </option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></div></div></div></div></div>
+    <div class="col-md-6 col-sm-12">
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>End Month</label>
+    <select name="degreeendmonth" id="degreeendmonth"class="custom-select"><option value=""> Choose... </option><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select></div></div></div>
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>End Year</label>
+    <select name="degreeendyear" id="degreeendyear" class="custom-select">
+    <option value=""> Choose... </option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></div></div></div></div></div></div>
+                <br><br>   
+                <!-- <div class="card-body border-top pb-0" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"> -->
+                    <div class="">
+                    <div class="pb-3">
+                    <div class="row">
+                    <div class="col">
+                    <div class="form-group">
+                    <div class="form-label-group">
+                    <label  style="font-family: Georgia, serif;font-size: 25px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  " >SCHOOLING</label>
+                    <input type="text" name="schoolboard" id="schoolboard" class="form-control" placeholder="GIVE YOUR BOARD NAME.... " autocomplete="off" value="{{school_info.schoolboard}}">
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="form-group">
+                    <div class="form-label-group">
+                    <label style="font-family: Georgia, serif;font-size: 25px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  ">City/Town</label>
+                    <input type="text"  name="schoolcity" id="schoolcity" class="form-control" placeholder="City/Town" autocomplete="off" value="{{school_info.schoolcity}}">
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col col-md-8">
+                    <div class="form-group">
+                    <div class="form-label-group">
+                    <label>SCHOOL NAME : </label>
+                    <input type="text" name="school" id="school " class="form-control" placeholder="10th(SSC) school name with address....." autocomplete="off" value="{{school_info.school}}">
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="form-group">
+                                                                                                              
+                    <div class="form-label-group">
+                    <label>percentage </label>
+                    <input type="text"  name="schoolpercent" id="schoolpercent" class="form-control" placeholder="ex:90%" autocomplete="off" value="{{school_info.schoolpercent}}">
+                   </div>
+                    </div>
+                    </div>                                                                    
+    </div>
+    <!-- </div> -->
+    <div class="row">
+    <div class="col-md-6 col-sm-12">
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>Start Month</label>
+    <select name="schoolstartmonth" id="schoolstartmonth" class="custom-select"><option value=""> Choose... </option><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select>
+    
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>Start Year</label>
+    <select name="schoolstartyear" id="schoolstartyear" class="custom-select">
+    <option value=""> Choose... </option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></div></div></div></div></div>
+    <div class="col-md-6 col-sm-12">
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>End Month</label>
+    <select name="schoolendmonth" id="schoolendmonth"class="custom-select"><option value=""> Choose... </option><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select></div></div></div>
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>End Year</label>
+    <select name="schoolendyear" id="schoolendyear" class="custom-select">
+    <option value=""> Choose... </option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></div></div></div></div></div></div>
+
+
+    <!-- <div class="card-body border-top pb-0" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"> -->
+        <div class="">
+        <div class="pb-3">
+        <div class="row">
+        <div class="col">
+        <div class="form-group">
+        <div class="form-label-group">
+        <label  style="font-family: Georgia, serif;font-size: 25px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  " >INTERMEDIATE</label>
+        <input type="text" name="intermediate" id="intermediate " class="form-control" placeholder="GIVE YOUR GROUP IN INTERMEDIATE: " autocomplete="off" value="{{intermediate_info.intermediate}}">
+        </div>
+        </div>
+        </div>
+        <div class="col">
+        <div class="form-group">
+        <div class="form-label-group">
+        <label style="font-family: Georgia, serif;font-size: 25px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  ">City/Town</label>
+        <input type="text"  name="intercity" id="intercity" class="form-control" placeholder="City/Town" autocomplete="off" value="{{intermediate_info.intercity}}">
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col col-md-8">
+        <div class="form-group">
+        <div class="form-label-group">
+        <label>college name </label>
+        <input type="text" name="college" id="college" class="form-control" placeholder="Intermediate college name with address....." autocomplete="off" value="{{intermediate_info.college}}">
+        </div>
+        </div>
+        </div>
+        <div class="col">
+        <div class="form-group">
+                                                                                                  
+        <div class="form-label-group">
+        <label>percentage </label>
+        <input type="text"  name="interpercent" id="interpercent" class="form-control" placeholder="ex:90%" autocomplete="off" value="{{intermediate_info.interpercent}}">
+        </div>
+        </div>
+        </div>
+    </div>
+    <!-- </div> -->
+    <div class="row">
+    <div class="col-md-6 col-sm-12">
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>Start Month</label>
+    <select name="interstartmonth" id="interstartmonth" class="custom-select"><option value=""> Choose... </option><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select>
+   
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>Start Year</label>
+    <select name="interstartyear" id="interstartyear" class="custom-select">
+    <option value=""> Choose... </option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>End Month</label>
+    <select name="interendmonth" id="interendmonth"class="custom-select"><option value=""> Choose... </option><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select></div></div></div>
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+        <label>End Year</label>
+    <select name="interendyear" id="interendyear" class="custom-select">
+    <option value=""> Choose... </option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <!-- <div class="card-body border-top pb-0" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"> -->
+        <h2 style="font-family: Georgia, serif;font-size: 25px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  ">
+            Skills:
+            </h2>
+        <div class="">
+        <div class="pb-3">
+        <div class="row">
+        <div class="col">
+        <div class="form-group">
+        <div class="form-label-group">
+            <label>
+                programming skills  : 
+                </label>
+                <input type="text" name="programSkill" id="programSkill" class="form-control" placeholder="programming skills" autocomplete="off" value="{{skills.programSkill}}"> 
+        </div>
+        </div>
+        </div>
+        <div class="col">
+        <div class="form-group">
+        <div class="form-label-group">
+            <label>
+                Operating System  : 
+                </label>
+                <input type="text" name="operatingSkill" id="operatingSkill" class="form-control" placeholder="Operating System" autocomplete="off" value="{{skills.programSkill}}">
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col">
+        <div class="form-group">
+        <div class="form-label-group">
+            <label>
+                Frameworks : 
+                </label>
+                <input type="text" name="FrameworkSkill" id="FrameworkSkill" class="form-control" placeholder=" Frameworks " autocomplete="off" value="{{skills.FrameworkSkill}}"> 
+        </div>
+        </div>
+        </div>
+        <div class="col">
+        <div class="form-group">                                                                                        
+        <div class="form-label-group">
+            <label>
+                Database  : 
+               </label>
+                <input type="text" name="DatabaseSkill" id="DatabaseSkill" class="form-control" placeholder="Database " autocomplete="off" value="{{skills.DatabaseSkill}}"> 
+        </div>
+        </div>
+        </div> 
+        </div>
+        <div class="row">
+            <div class="col">
+            <div class="form-group">
+            <div class="form-label-group">
+                <label>
+                    IDE : 
+                     </label>
+                    <input type="text" name="IDESkill" id="IDEFrameworkSkill" class="form-control" placeholder=" IDE " autocomplete="off" value="{{skills.IDESkill}}">
+            </div>
+            </div>
+            </div>
+            <div class="col">
+            <div class="form-group">
+            <div class="form-label-group">
+                <label>
+                    others : 
+                    </label>
+                    <input type="text" name="otherSkill" id="otherSkill" class="form-control" placeholder="mention other skills " autocomplete="off" value="{{skills.otherSkill}}"> 
+            </div>
+            </div>
+            </div>
+            </div>
+    </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>   
+
+     <div class="card shadow-md mt-4" style="color: dodgerblue;">
+     <div class="card-body">
+    <legend class="complex-box-legend">
+    <i class="fa fa-user-circle"></i> 
+    WORK EXPERIENCE
+    </legend>
+    </div>
+    <div class="card-body border-top pb-0" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+    <div class="">
+    <div class="pb-3">
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+    <label>JOB TITLE</label>
+    <input  name="jobtitle" id="jobtitle" type="text" class="form-control" placeholder="JOB" autocomplete="off" value="{{job_details.jobtitle}}">
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+    <label>City/Town</label>
+    <input name="jobcity" id="jobcity" type="text" class="form-control" placeholder="City/Town" autocomplete="off" value="{{job_details.jobcity}}">
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+    <label>COMPANY NAME</label>
+    <input name="companyname" id="companyname" type="text" class="form-control" placeholder="COMPANY" autocomplete="off" value="{{job_details.companyname}}">
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6 col-sm-12">
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+    <select name="jobstartmonth" id="jobstartmonth" class="custom-select"><option value=""> Choose... </option><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select>
+    <label>Start Month</label>
+    </div>
+    </div>
+    </div>
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+    <select name="jobstartyear" id="jobstartyear" class="custom-select">
+    <option value=""> Choose... </option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select><label>Start Year</label></div></div></div></div></div>
+    <div class="col-md-6 col-sm-12">
+    <div class="row">
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+    <select  name="jobendmonth" id="jobendmonth" class="custom-select"><option value=""> Choose... </option><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select><label>End Month</label></div></div></div>
+    <div class="col">
+    <div class="form-group">
+    <div class="form-label-group">
+    <select name="jobendyear" id="jobendyear" class="custom-select">
+    <option value=""> Choose... </option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select><label>End Year</label></div></div></div></div></div></div>
+    <div class="row">
+    <div class="col" >
+    <textarea name="project" id="project" type="text" class="form-control" placeholder="Mention your  projects and your participation  too. " autocomplete="off"rows="4" cols="100"  >{{job_details.project}}</textarea>
+    </div>
+    </div>
+    </div>
+    <div class="ROW">
+    <h2 style="font-family: Georgia, serif;font-size: 20px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  ">
+    PROJECT AND  Internships WORKED:
+    </h2>
+    <div class="row">
+    <div class="col">
+    <textarea  name="internship" id="internship" type="text" class="form-control" placeholder="Mention your PROJECT AND  Internships WORKED IN PAST here ...... " autocomplete="off"rows="4" cols="100">{{job_details.internship}}</textarea>  
+    </div>
+    </div>
+    <div class="row">
+    <div class="col">
+    <label style="font-family: Georgia, serif;font-size: 15px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  ">
+        PROJECT TITLE:
+    </label>
+    <input  name="projecttitle" id="projecttitle" type="text" class="form-control" placeholder="Mention your PROJECT TITLE" autocomplete="off"rows="4" cols="100" value="{{job_details.projecttitle}}"/>  
+    </div>
+    <div class="col">
+    <label style="font-family: Georgia, serif;font-size: 15px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  ">
+        TEAM MEMBERS :
+    </label>                                                                         
+    <input  name="projectteam" id="projectteam" type="text" class="form-control" placeholder="TEAM MEMBERS " autocomplete="off"rows="4" cols="100" value="{{job_details.projectteam}}"/>  
+    </div>
+    <div class="col">
+    <label style="font-family: Georgia, serif;font-size: 15px;  padding-top: 30px;padding-bottom: 10px;padding-left: 10px;  ">
+            POSITION :
+    </label>                                                                         
+    <input  name="position" id="position" type="text" class="form-control" placeholder="position in the team... " autocomplete="off"rows="4" cols="100" value="{{job_details.position}}"/>  
+    </div>
+    </div>
+    <br>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="card shadow-md mt-4" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+        <div class="card-body" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+        <legend class="complex-box-legend">
+        <i class="fa fa-user-circle"></i> 
+            HOBBIES AND ACHIVEMENTS 
+        </legend>
+        </div>
+        <div class="card-body border-top"data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+        <div class="row"><div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+        <div class="form-label-group">
+        <label>
+                HOBBIES
+        </label>
+        <input type="text" name="hobbies1" id="hobbies1" class="form-control" placeholder="hobbies 1" autocomplete="off" value="{{extra_activities.hobbies1}}">
+        </div>
+        </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+        <div class="form-label-group">
+        <label  >
+        <br>
+        </label>
+        <input type="text" name="hobbies2" id="hobbies2" class="form-control" placeholder="hobbies2" autocomplete="off" value="{{extra_activities.hobbies2}}">
+        </div></div></div></div>
+        <div class="row">
+        <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+        <label>
+            Achivements:
+        </label>
+        <div class="form-label-group">
+        <input type="text" name="achivements1" id="achivements1" class="form-control" placeholder="Achivements 1" autocomplete="off" value="{{extra_activities.achivements1}}">
+        </div>
+        </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+        <div class="form-group">
+        <br>
+        <div class="form-label-group">
+        <input type="text" name="achivements2" id="achivements2" class="form-control" placeholder="Achivements 2" autocomplete="off" value="{{extra_activities.achivements2}}">
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col">
+        <div class="form-group">
+        <label>
+            EXTRA CURRICULAR ACTIVITIES:
+        </label>
+        <div class="form-label-group">
+        <input type="text" name="extra" id="extra" class="form-control" placeholder="EXTRA CURRICULAR ACTIVITIES" autocomplete="off" value="{{extra_activities.extra}}">
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col">
+        <label>
+        STRENGHTS :
+        </label>
+        <div class="form-group">
+        <div class="form-label-group">
+        <input type="text" name="strengths1" id="strengths1" class="form-control" placeholder="STRENGHTS" autocomplete="off" value="{{extra_activities.strengths1}}">
+        </div>
+        </div>
+        </div>
+        <div class="col">
+        <label>
+        <br>
+        </label>
+        <div class="form-group">
+        <div class="form-label-group">
+        <input type="text" name="strengths2" id="strengths2" class="form-control" placeholder="STRENGHTS" autocomplete="off" value="{{extra_activities.strengths2}}">
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col">
+        <label>
+            Languages known :
+        </label>
+        <div class="form-group">
+        <div class="form-label-group">
+        <input type="text" name="language" id="language" class="form-control" placeholder="Language known......" autocomplete="off" value="{{extra_activities.language}}">
+        </div>
+        </div>
+        </div>
+        </div></div>
+        </div>                                           
+        </div>
+        <div class="card shadow-md mt-4" style="color: dodgerblue;">
+            <div class="">
+                  <button class=" btn-lg btn-primary btn-block mb-3" value="save" type="submit">
+                      <span>
+                     <span class="ml-2 mr-2">Next Steps</span>
+                      <i class="fa fa-arrow-right"></i>
+                      </span>
+                
+            </div>
+ 
+        </div>
+    </div>
+</section>   
+
+</form>
+<!-- form end -->
+
+    
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <p class="copyright">Copyright &copy; 2020 BIO Company 
+                 </p>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="{% static '#' %}"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="{% static '#' %}"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="{% static '#' %}"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="{% static '#' %}"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="{% static '#' %}"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- jQuery -->
+    <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/js/popper.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'ssets/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/imgfix.min.js' %}"></script> 
+    
+    <!-- Global Init -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+  </body>
+</html>
